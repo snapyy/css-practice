@@ -1,0 +1,23 @@
+/*  #ff3368; #ecfdff; */
+
+h1 {
+  color: #ff3368;
+}
+
+.para {
+  color: green;
+}
+
+#btn {
+  background-color: purple;
+  color: #fff;
+}
+
+#btn:hover {
+  background-color: black;
+  color: aqua;
+}
+
+h1:hover {
+  color: blue;
+}
