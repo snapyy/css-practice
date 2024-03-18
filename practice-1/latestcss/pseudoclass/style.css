@@ -1,0 +1,124 @@
+/** ------------------------------------- -->
+/** LATEST PSEUDO CLASSES
+/** ---------------------------------------- --> */
+
+/* !important ->  https://caniuse.com/ */
+
+/*? :is() Pseudo-Class (or :matches()):
+The :is() pseudo-class allows you to select elements that match any of the provided selectors.
+It's particularly useful when you want to apply the same styles to multiple selectors without repeating the styles. */
+
+/*? :where() Pseudo-Class:
+The :where() pseudo-class is similar to :is() and allows you to select elements that match any of the provided selectors.
+It's typically used when you want to group selectors without applying specific styles. */
+
+/*? :has() Pseudo-Class:
+The :has() pseudo-class selects elements that contain a specific element or set of elements that match the provided selector.
+It's currently not well-supported in modern browsers and may not be widely used in practice. */
+
+/*? :not() Pseudo-Class:
+The :not() pseudo-class allows you to select elements that do not match the provided selector.
+It's commonly used to exclude specific elements from being styled. */
+
+/** ---------------------------------------- --> */
+
+/** ------------------------------------- -->
+/** LATEST PSEUDO CLASSES
+/** ---------------------------------------- --> */
+p,
+label {
+  font-size: 20px;
+}
+
+
+/** using "is" */
+
+/* example */
+/* ul li a,
+ol li a,
+dl li a {
+  color: red;
+}
+
+:is(ul, ol, dl) li a {} */
+
+/* :is(ul) li :is(a, p, h1) */
+
+/* another example */
+
+/* ul li ,
+ol li,
+dl li{
+  color: red;
+} */
+
+/* :is(ol, ul, dl) li {
+  color: red;
+} */
+
+/* another example  */
+
+/* ul li ,
+ul a,
+ul p{
+  color: red;
+} */
+
+/* ul :is(li, a, p) li {
+  color: red;
+} */
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  align-items: center;
+}
+
+
+/* .section-about .grid h1,
+.section-about .grid p,
+.section-testimonial .grid h1,
+.section-testimonial .grid p {
+  color: #fff;
+} */
+
+/* :is(.section-about, .section-testimonial) .grid :is(h1, p) {
+  color: #fff;
+} */
+
+/* specificity is 0 of "where" */
+:where(.section-about, .section-testimonial) .grid :where(h1, p) {
+  color: yellow;
+}
+
+
+/**using "has" */
+
+.parent:has([type="checkbox"]:checked) label {
+  color: red;
+}
+
+/** accent color also new css feature */
+input[type="checkbox"] {
+  accent-color: green;
+  width: 20px;
+  aspect-ratio: 1;
+}
+
+/* new not ! operator */
+
+nav ul li {
+
+  font-size: 2rem;
+  list-style: none;
+  border: 1px solid red;
+
+}
+
+nav ul :not(li:first-child) {
+  padding-left: 50px;
+}
+
+/*? 1: What the difference between :is() and :where()  */
+/* :where() has no specificity. 
+:is() takes the specificity of its most specific selector. */
