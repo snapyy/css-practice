@@ -66,5 +66,6 @@ p {
   column-rule-style: dotted;
   column-rule-width: 10px; */
   column-gap: 50px;
-  text-align: justify;
+ text-align: justify;
+  
 }
